@@ -12,34 +12,41 @@
 <body>
     <div class="container">
         <div class="header-container">
-            <h1>SolveIt</h1>
-            <h4>Welcome to SolveIt!</h4>
-            <p>Test your math skills with our interactive quiz!</p>
+            <div class="header-icon">
+                <i class="fa-solid fa-calculator"></i>
+            </div>
+            <div class="header-content">
+                <h1 class="header-title-text">SolveIt</h1>
+                <div class="header-bar"></div>
+                <h4 class="header-main-text">Welcome to SolveIt!</h4>
+                <p class="header-sub-text">Test your math skills with our interactive quiz!</p>
+            </div>
+            <div class="header-icon">
+                <i class="fa-solid fa-square-root-variable"></i>
+            </div>
         </div>
         <div class="quiz-container">
-            <h1>Question #1</h1>
-            <h3>1/10 cards</h3>
-            <h4>What is 5 + 3?</h4>
+            <h1 class="quiz-header">Question #1</h1>
+            <h3 class="quiz-total-questions">1/10 cards</h3>
+            <div class="quiz-line"></div>
+            <p class="quiz-question">What is 5 + 3?</p>
             <div class="question-container">
-                <p>A: 7</p>
-                <p>B: 8</p>
-                <p>C: 6</p>
-                <p>D: 11</p>
+                <input type="text" class="question-option" placeholder="Enter your answer here">
             </div>
-            <div class="feedback-container">
-                <h1>Congratulations! Correct</h1>
-                <h1>Sorry... Incorrect</h1>
+        </div>
+        <div class="feedback-container">
+            <div class="feedback-text-container hidden">
+                <h1 class="feedback-correct">Congratulations! Correct</h1>
+                <h1 class="feedback-incorrect">Sorry... Incorrect</h1>
             </div>
-            <div class="submit-container">
-                <button>Submit Answer</button>
+            <div class="button-container">
+                <button class="submit-button">Submit Answer</button>
+                <button class="next-button hidden" >Next Question</button>
             </div>
-            <div class="next-container">
-                <button>Next Question</button>
-            </div>
-            <div class="footer-container">
-                <h1>Created by Mason E.</h1>
-                <p>Always griding code and math for the love of it.</p>
-            </div>
+        </div>
+        <div class="footer-container">
+            <h1 class="footer-main">Created by Mason E.</h1>
+            <p class="footer-sub">Always grinding code and math for the love of it.</p>
         </div>
     </div>
     <script src="script.js"></script>
