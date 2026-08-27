@@ -9,7 +9,7 @@
     <title>SolveIt</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body onload="displayQuestion(0)">
     <div class="container">
         <div class="header-container">
             <div class="header-icon">
@@ -26,22 +26,20 @@
             </div>
         </div>
         <div class="quiz-container">
-            <h1 class="quiz-header">Question #1</h1>
-            <h3 class="quiz-total-questions">1/10 cards</h3>
+            <h1 class="quiz-header"></h1>
+            <h3 class="quiz-total-questions"></h3>
             <div class="quiz-line"></div>
-            <p class="quiz-question">What is 5 + 3?</p>
+            <p class="quiz-question"></p>
             <div class="question-container">
                 <input type="text" class="question-option" placeholder="Enter your answer here">
             </div>
         </div>
         <div class="feedback-container">
-            <div class="feedback-text-container hidden">
-                <h1 class="feedback-correct">Congratulations! Correct</h1>
-                <h1 class="feedback-incorrect">Sorry... Incorrect</h1>
-            </div>
+            <div class="feedback-text-container hidden"></div>
             <div class="button-container">
                 <button class="submit-button">Submit Answer</button>
                 <button class="next-button hidden" >Next Question</button>
+                <button class="result-button hidden">View Results</button>
             </div>
         </div>
         <div class="footer-container">
