@@ -7,10 +7,14 @@ let currIndex = 0;
 submitButton.addEventListener("click", () => {
     const userAnswer = document.querySelector(".question-option");
     if (!userAnswer.value) {
-        console.log("Please enter an answer before submitting.");
+        displayError("Please enter a valid answer!");
         return;
     }
-    checkAnswer(parseInt(userAnswer.value), currIndex);
+    if (isNaN(Number(userAnswer.value))) {
+        displayError("Please enter a number!");
+        return;
+    }
+    checkAnswer(Number(userAnswer.value), currIndex);
     if (currIndex >= questionSet.length - 1) {
         submitButton.classList.add("hidden");
         nextButton.classList.add("hidden");
@@ -35,6 +39,7 @@ resultButton.addEventListener("click", () => {
 function checkAnswer(userAnswer, index) {
     const correctAnswer = questionSet[index].answer;
     const displayContainer = document.querySelector(".feedback-text-container");
+    displayContainer.classList.add("hidden");
     if (userAnswer === correctAnswer) {
         if (displayContainer.classList.contains("hidden")) {
             displayContainer.classList.remove("hidden");
@@ -69,6 +74,16 @@ function displayQuestion(currIndex) {
     numOfQuestions.textContent = `${currIndex + 1}/${questionSet.length} cards`;
     const question = document.querySelector(".quiz-question");
     question.textContent = questionSet[currIndex].question;
+}
+
+function displayError(mesg) {
+    const userAnswer = document.querySelector(".question-option");
+    userAnswer.value = "";
+    const displayContainer = document.querySelector(".feedback-text-container");
+    if (displayContainer.classList.contains("hidden")) {
+        displayContainer.classList.remove("hidden");
+    }
+    displayContainer.innerHTML = `<h1 class="feedback-incorrect">${mesg}</h1>`;
 }
 
 const questionSet = [
